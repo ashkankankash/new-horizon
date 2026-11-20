@@ -1,0 +1,1359 @@
+
+/* ========================================
+   1. DESIGN SYSTEM – CSS VARIABLES
+======================================== */
+
+:root {
+
+    /* Typography */
+    --font-primary: 'Roboto', sans-serif;
+
+    --font-size-h1: clamp(2.5rem, 5vw, 3.5rem);
+    --font-size-h2: clamp(1.75rem, 3vw, 2.25rem);
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.25rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.875rem;
+
+    /* Font Weights */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-xbold: 900;
+
+    /* Colors */
+    --color-primary: #202B38;
+    --color-accent: #3978D4;
+    --color-secondary: #697586;
+
+    --color-background: #131555;
+    --color-light: #F4F6F8;
+    --color-border: #E2E8F0;
+
+    --color-white:#fff;
+    --color-black:#000;
+
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+
+    /* Transitions */
+    --transition-default: 0.3s ease;
+
+}
+
+
+/* ========================================
+   2. GENERAL STYLES
+======================================== */
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-regular);
+
+    color: var(--color-light);
+    background-color: var(--color-background);
+
+    line-height: 1.6;
+    width:100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main, header, footer{
+    max-width: 100%;
+    width: 100%;
+    margin:0px auto;
+    padding: 0px;
+}
+header .header,header .intro, footer section{
+    max-width: 1440px;
+    min-width: 320px;
+    width: 100%;
+    margin:0px auto;
+    padding: 0px;
+    background-color: var(--color-background);
+}
+main section .myContainer {
+    max-width: 1440px;
+    min-width: 320px;
+    width: 100%;
+    margin:0px auto;
+    background-color: var(--color-background);
+}
+.hideMe{display: none;}
+.simpleHideMeOnDesktop{
+    display: block;
+}
+.myContainer{
+    padding:  2.2rem 1.25rem 2.2rem;
+}
+
+.inVisible{
+    visibility: hidden !important;
+    opacity:0;
+}
+
+.link{
+    color: var(--color-accent) !important;
+}
+
+/* ========================================
+   3. TYPOGRAPHY
+======================================== */
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+p, a, h1, h2, h3, h4, h5, ul, li{margin:0; padding: 0;}
+h1, h2, h3, h4, h5, h6{
+    font-weight: var(--font-bold);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 1rem;
+}
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-bold);
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: var(--font-size-h2);
+}
+
+h4 {
+    font-size: var(--font-size-h2);
+}
+
+h5, h6{
+     font-size: var(--font-size-h2);
+}
+
+
+/* ========================================
+   4. LINKS
+======================================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-default);
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+a.btn:hover {
+    text-decoration: none;
+}
+/* ========================================
+   5. BUTTONS
+======================================== */
+
+
+
+
+.btn {
+    display: inline-block;
+    padding: 0 1.5rem;
+    color: var(--color-white);
+    background-color: var(--color-accent);
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    transition: var(--transition-default);
+    font-weight: var(--font-regular);
+    height: auto;
+    line-height: 2.5;
+    border: 1px solid #043c8d;
+}
+
+.btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+/* ========================================
+   5. BUTTONS
+======================================== */
+
+
+.colModule{
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:0;
+    margin-right:0;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+.flex_mobile_column_reverse {
+    flex-direction: column-reverse !important;
+}
+
+
+
+/* ========================================
+   Separator
+======================================== */
+main section.separatorSection .myContainer{
+    max-width: 100%;
+    padding: 2rem 0;
+}
+.separatorSection p{
+    background-color: rgba(255,255,255,0.3);
+    height: 1px;
+}
+main section.separatorSection *{
+    margin: 0;
+    padding: 0;
+}
+/*
+#############
+*/
+
+/* ==========================================
+   HEADER & NAVIGATION START
+========================================== */
+
+
+.header .myContainer{
+    padding:  0rem 1.25rem 0rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+header{
+    background-image: none;
+}
+
+.inner-header{
+    position: relative;
+}
+.nav-hm{
+
+    position: absolute;
+      right: 0px;
+      top: 0px;
+      margin-top: 1.2rem;
+}
+.hamburger {
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid var(--color-white);
+  padding: 6px;
+  cursor: pointer;
+
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background-color:var(--color-white);
+  display: inline-block;
+  transition: all ease 0.3s;
+}
+/* for close  */
+.nav-open .hamburger span:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.nav-open .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 4px);
+  transform-origin: center;
+}
+.nav-open .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  transform-origin: center;
+}
+
+
+
+
+.hamburger{display: flex;}
+.collapse {
+    display: none;
+}
+nav ul{
+    list-style-type:none ;
+}
+nav ul li a{
+    font-size: 1rem;
+}
+.logo a{
+    font-size: 2rem;
+    line-height: 2;
+    font-weight: var(--font-bold);
+}
+.dots{
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-accent);
+}
+.inner-header{
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+.navbar-collapse ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+     flex-direction: column;
+}
+
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+
+.collapse ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+.inner-header .nav-open.nav-hm {
+    top: -19px;
+    margin-top: 1.2rem;
+    background-color: var(--color-black);
+    padding: 1.25rem;
+}
+.inner-header .nav-hm {
+    padding: 1.25rem;
+    top: -19px;
+}
+.nav-hm .hamburger{
+    background-color: transparent;
+}
+.inner-header .nav-open .hamburger{
+    border-color: var(--color-black);
+    color: var(--color-white);
+}
+.inner-header .nav-open .hamburger span{
+border-color: var(--color-white);
+}
+.inner-header .navbar-collapse{
+    background-color: var(--color-black);
+    padding: 0;
+    width: 100%;
+}
+.inner-header .navbar-collapse ul{
+    align-items: stretch;
+    gap:0;
+}
+
+.inner-header .navbar-collapse ul li{
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+
+.inner-header .logo{
+    padding-left: 1.25rem;
+}
+/* ==========================================
+   HEADER & NAVIGATION End
+========================================== */
+
+
+/* ==========================================
+   5. Intro SECTION
+========================================== */
+.intro img.img-fluid{border-radius: 0;}
+.intro .container{
+    position: relative;
+    padding: 0;
+}
+header .intro{
+    background-color: transparent;
+}
+header .intro .text{
+    width:100%;
+    background-color: transparent;
+    position: absolute;
+    bottom:0;
+    left:0%;
+    padding: 1.25rem;
+    margin-top: 0;
+    background-color: rgba(0,0,0, 0.5);
+
+}
+header .intro h1{
+    color: var(--color-white);
+    margin-bottom: 0;
+}
+.intro p{
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+}
+.intro .subTitel{
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+.intro .btn{
+    margin-bottom: 0.8rem;
+}
+/* ==========================================
+   5. Intro SECTION finisch
+========================================== */
+
+strong{
+    font-weight: 900;
+}
+
+
+
+/* ==========================================
+   about SECTION
+========================================== */
+.aboutSection article{
+    margin-bottom: 1.2rem;
+}
+ul.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1.2rem;
+}
+ul.list li{
+    position: relative;
+    padding: 1rem 0 1rem 5rem ;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+ul.list li strong{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+ul.aboutList li::before,
+ul.list li::before{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: "Font Awesome 7 Free";
+    font-feature-settings: normal;
+    font-style: normal;
+    font-synthesis: none;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    text-rendering: auto;
+    font-size: 3rem;
+    position: absolute;
+    left: 0;
+    top:8px;
+    color: var(--color-accent);
+}
+.fa-regular, .fa-regular::before {
+    font-family:"Font Awesome 5 Free" !important;
+}
+
+ul.aboutList li.list1::before{
+    font-family: 'Font Awesome 7 Free';
+        content: "\F085";
+}
+ul.aboutList li.list2::before{
+        content: "\f044";
+}
+ul.aboutList li.list3::before{
+        content: "\f6ad";
+}
+/* ==========================================
+   about SECTION
+========================================== */
+
+
+/*_______________________
+    service section
+_________________________*/
+
+.serviceSection .row.rw1 {
+        margin-bottom: 2rem;
+    }
+
+.serviceSection .row.rw2 .m1{
+    margin-bottom: 2rem;
+}
+.serviceSection{
+   background-color:var(--color-background)
+}
+.serviceSection .rw1 article{
+    text-align: center;
+}
+.serviceSection .row.rw2 article{
+     transition: box-shadow 0.5s ease-in-out;
+}
+.serviceSection .row.rw2 article:hover{
+    box-shadow: 0px 0px 35px -2px rgba(57, 120, 212, 0.8);
+    -webkit-box-shadow: 0px 0px 35px -2px rgba(57, 120, 212, 0.8);
+}
+.serviceSection .rw2 article{
+    background-color: #3b42ab;
+    padding: 1rem;
+    border:1px solid #ccc;
+    border-radius: 1rem;
+}
+.serviceSection .image .fa-solid::before{
+    font-size:2.5rem;
+    color: var(--color-accent);
+}
+.serviceSection .image{
+    margin-bottom: 1.4rem;
+}
+.serviceSection .image .fa-solid.elm2::before{
+    font-size:3.8rem;
+    color: #000;
+    margin-left: -11px;
+}
+ul.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.list.checkmark li {
+    position: relative;
+    padding: 0.75rem 0 0.75rem 2rem;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+ul.list.checkmark  li::before{
+    font-size: 1.5rem;
+}
+ul.list.checkmark  li::before{
+        content: "\F00C";
+        font-weight: 900;
+}
+
+.serviceSection .rw2 article{
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*_______________________
+    service section
+_________________________*/
+
+
+
+
+/*_______________________
+    career section
+_________________________*/
+#divSlider{
+
+}
+.careerSection{
+    background-color:var(--color-background)
+}
+#divSlider .set.active{
+    display: block;
+}
+#divSlider .set{
+
+}
+
+
+
+
+#divSuperfair {
+    position: relative;
+
+    display: grid;
+}
+.slider_controller{
+    clear: both;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    gap: 4rem !important;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.slider_controller .direction{
+    cursor: pointer;
+}
+
+.slider_controller .direction{
+    position: relative;
+}
+.slider_controller .direction::before{
+font-size: 3rem;
+}
+.careerSection .direction .fa-solid::before{
+    font-size: 2rem;
+    color: var(--color-accent);
+}
+.slider_controller .direction.left::before{
+
+}
+.slider_controller .direction.right::before{
+
+}
+.boxs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+p.sTitel{
+    font-size: 1.4rem;
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+}
+.linkInfo a{
+    font-weight: var(--font-medium);
+}
+.boxs p{
+    margin-bottom:0.75rem;
+}
+
+
+#divSuperfair {
+    position: relative;
+}
+
+#divSuperfair .set {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s linear;
+}
+
+#divSuperfair .set.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+
+.careerSection .tt1 article{
+    margin-bottom: 1.2rem;
+}
+
+
+/*_______________________
+    career section
+_________________________*/
+
+/*_______________________
+    project section
+_________________________*/
+
+
+
+/*_______________________
+    project section
+_________________________*/
+
+.projectSection .nr1 article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+.projectSection .nr1 p {
+    text-align: center;
+}
+.projectSection .image img {
+    display: block;
+    width: 100%;
+    vertical-align: bottom;
+}
+.projectSection .image{
+    position: relative;
+    overflow: hidden;
+}
+.projectSection .text{
+    position: absolute;
+    top:0;
+    padding: 1.5rem;
+    color:var(--color-white);
+    background-color: rgba(0,0,0,0.6);
+    height: 100%;
+    border-radius: 1rem;
+
+
+
+    opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.5s ease-in-out,
+                 visibility 0.5s ease-in-out;
+
+}
+.projectSection .active .text{
+    visibility: visible;
+    opacity: 1;
+}
+.projectSection .text p.titel{
+    font-size: 1.2rem;
+    margin-bottom: 0.15rem;
+}
+.projectSection .text p{
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+.projectSection .text a{
+    color: var(--color-white);
+}
+.projectSection .colModule {
+    margin-bottom: 1.5rem;
+}
+/*========================
+    Contact section
+==========================*/
+
+.contactSection h6{
+
+}
+.contactSection article {
+    display: flex;
+        flex-direction: column;
+        align-items: center;          /* bleibt für horizontale Zentrierung */
+        justify-content: flex-start;  /* ← das schiebt alles nach oben */
+        max-width: 800px;
+        margin: 0 auto 2rem;
+}
+.contactSection article p{text-align: center;}
+.contactSection .h_small{
+    font-weight: var(--font-bold);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.contactSection .info p{
+    display: inline-block;
+    border: 1px solid var(--color-white);
+    border-radius: 0.5rem;
+    padding: 0 1.2rem;
+    line-height: 3;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.contactSection .info .fa-regular{
+    margin-right: 0.5rem;
+}
+.btnBox{
+    display: flex;
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+.info.blurMe{
+    opacity: 0.4;
+}
+#fromSection .emails,
+#fromSection .form{
+    display: none;
+}
+
+
+#fromSection .emails.active,
+#fromSection .form.active{
+    display: block;
+}
+
+.form label.form-label {
+    font-size: 0.876rem;
+    margin-bottom: 0px;
+    font-weight: var(--font-bold);
+}
+.form .form-field {
+    margin-bottom: 0.8rem;
+}
+.form .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-black);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--color-white);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    font-family: inherit;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--color-secondary) !important;
+   font-size: 0.876rem ;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: var(--color-secondary) !important;
+   font-size: 0.876rem ;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color:var(--color-secondary)  !important;
+   font-size: 0.876rem ;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: var(--color-secondary)!important;
+   font-size: 0.876rem ;
+}
+.form .form-field.has-error label,
+.has-error{
+    color:#e10000 !important;
+}
+.contactSection article .success{
+    margin-bottom: 0;
+}
+.contactSection article.success{
+    display: none;
+}
+
+.success.active, .success.active *{
+height: auto;
+}
+.contactSection article.success.active{
+    display: block;
+}
+.success .titel{
+    font-size: 2rem;
+    color:#00fd1e;
+    line-height: 1.4;
+}
+
+.contactSection #fromSection{
+    margin-bottom: 0;
+}
+.ctaForm .fa-solid{
+    margin-left:0.3rem
+}
+/*========================
+    Contact section
+==========================*/
+
+/*========================
+    footer section
+==========================*/
+footer,
+.footerSection{
+    background-color: var(--color-black);
+}
+.footerSection .myContainer{
+    padding: 2.2rem 1.25rem 1rem 1.25rem ;
+}
+footer{
+    border-top:1px solid #fff;
+    border-top-color: rgba(255,255,255,0.3);
+}
+.footerSection p.titel{
+    font-size: 1.6rem;
+    font-weight: var(--font-bold);
+}
+.footerSection p, .footerSection p a{
+    font-size: 0.8rem;
+}
+.footerSection .mx{
+    margin-bottom: 1rem;
+}
+.footerSection p.titel2.titel{
+    font-size: 1.1rem;
+}
+/*========================
+    footer section
+==========================*/
+
+/*========================
+    DAAAAARK MODE
+==========================*/
+
+
+
+
+/*========================
+    DAAAAARK MODE
+==========================*/
+@media (min-width: 1290px){
+    /*_______________________
+        project section
+    _________________________*/
+
+
+    /*_______________________
+        project section
+    _________________________*/
+}
+@media (min-width: 992px){
+    /* ========================================
+       Separator
+    ======================================== */
+    main section.separatorSection .myContainer{
+        max-width: 100%;
+        padding: 3.5rem 0;
+    }
+    .separatorSection p{
+
+    }
+    main section.separatorSection *{
+
+    }
+    /*
+    #############
+    */
+
+
+    .row>*{
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+    .flex_desktop_row {
+        flex-direction: row !important;
+    }
+    .simpleHideMeOnDesktop{
+        display: none;
+    }
+    .myContainer{
+        padding:  3.6rem 2.25rem;
+    }
+    .col_d_6{
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .col_d_8{
+        flex: 0 0 auto;
+        width: 66.33%;
+    }
+    .col_d_4{
+        flex: 0 0 auto;
+        width: 33.33%;
+    }
+    /* ==========================================
+       HEADER & NAVIGATION End
+    ========================================== */
+    .inner-header .logo{
+        padding-left: 0;
+    }
+    .header .myContainer{
+        padding:  0rem 1.25rem 0rem;
+    }
+    .header .myContainer {
+        padding: 0rem 2.25rem 0rem;
+    }
+
+    header{
+        background-image: url("../assets/images/bg_header.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .navbar-collapse.collapse{
+        display: flex;
+    }
+    .hamburger{
+         display: none;
+    }
+    .navbar-collapse ul,
+   .inner-header .navbar-collapse ul {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+        padding: 0;
+
+    }
+
+    .inner-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap:0px
+    }
+    .menu-items {
+      display: flex;
+      flex-direction: row;     /* ← horizontal in einer Linie */
+      align-items: center;
+      gap: 1.5rem;             /* optionaler Abstand zwischen den Links */
+      flex-wrap: nowrap;       /* verhindert Umbruch */
+    }
+    .menu-items a,
+    .menu-items li {
+      display: inline-block;   /* oder einfach weglassen */
+      width: auto;
+    }
+    .inner-header .navbar-collapse {
+        background-color: transparent;
+        padding: 0;
+        width: auto;
+    }
+
+    .inner-header .navbar-collapse ul li {
+        padding: 0;
+        border-bottom: 1px solid transparent;
+    }
+    /* ==========================================
+       HEADER & NAVIGATION End
+    ========================================== */
+
+    /* ==========================================
+       5. Intro SECTION
+    ========================================== */
+
+
+    header .intro{
+        background-color: transparent;
+    }
+    header .intro .text{
+        width:100%;
+        max-width: 580px;
+        background-color: rgba(0,0,0, 0.5);
+        padding: 1.4rem;
+        margin: 0 0 3rem 1.25rem;
+    }
+    .intro .myContainer{
+        padding-top: 20rem;
+                padding-bottom: 12rem;
+    }
+    header .intro h1{
+        color: var(--color-white);
+    }
+    .intro p{
+        color: var(--color-white);
+    }
+    .intro .subTitel{
+        font-size: 1.6rem;
+    }
+    /* ==========================================
+       5. Intro SECTION finisch
+    ========================================== */
+
+
+    /*_______________________
+        service section
+    _________________________*/
+    ul.list.checkmark li {
+        padding: 1rem 0 1rem 2.5rem;
+    }
+    .serviceSection .row.rw1{
+        margin-bottom: 2rem;
+    }
+    .serviceSection .row.rw2 .m1{
+        margin-bottom: 0;
+    }
+    .serviceSection .rw2 article{
+        padding: 3rem 1.5rem 2.5rem;
+    }
+    .serviceSection .row.rw2 {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .serviceSection .colModule.col_d_6 {
+        flex: 0 0 auto;
+        max-width: 440px;          /* verhindert, dass sie zu breit werden */
+    }
+    .serviceSection .colModule article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .serviceSection .rw1 .colModule article{
+        max-width: 800px;
+        margin: 0px auto;
+    }
+
+    .serviceSection p.titel{
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    .serviceSection .rw2 article{
+        padding: 1.5rem 1.5rem;
+    }
+    .serviceSection .colModule article ul.checkmark {
+
+    }
+    /*_______________________
+        service section
+    _________________________*/
+
+    /*_______________________
+        career section
+    _________________________*/
+
+    .careerSection img {
+        /*position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        margin-top: 45px;*/
+    }
+    .careerSection .boxs .text {
+
+    }
+    .careerSection .direction .fa-solid::before{
+       font-size: 3rem;
+    }
+    .careerSection img {
+       /* max-width: 730px;*//
+    }
+    .slider_controller{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .slider_controller{
+        display: block;
+    }
+    #divSlider{
+        position: relative;
+        overflow: hidden;
+    }
+    .slider_controller {
+        z-index: 100;
+      position: absolute;
+      bottom: 47%;       /* Abstand vom unteren Rand – nach Bedarf anpassen */
+      left: 0;
+      right: 0;
+      height: 40px;       /* oder so hoch, wie die Buttons sind */
+      pointer-events: none; /* optional: damit Klicks durchgehen, wenn nötig */
+    }
+
+    .slider_controller .left.direction {
+      position: absolute;
+      left: 15px;         /* Abstand vom linken Rand */
+      top: 0;
+      pointer-events: auto;
+    }
+
+    .slider_controller .right.direction {
+      position: absolute;
+      right: 39px;        /* Abstand vom rechten Rand */
+      top: 0;
+      pointer-events: auto;
+    }
+
+    .careerSection .tt1 article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
+
+    .careerSection .tt1 p{text-align: center;}
+    .careerSection h4{
+    }
+
+    /*_______________________
+        career section
+    _________________________*/
+
+
+    /* ==========================================
+       about SECTION
+    ========================================== */
+
+
+
+
+
+
+
+    /* ==========================================
+       about SECTION
+    ========================================== */
+
+
+    /*_______________________
+        Service section
+    _________________________*/
+
+
+
+    /*_______________________
+        Service section
+    _________________________*/
+
+
+    /*========================
+        Contact section
+    ==========================*/
+    .btnBox{
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+    }
+
+    /*========================
+        Contact section
+    ==========================*/
+
+
+    /*========================
+        footer section
+    ==========================*/
+
+
+    /*========================
+        footer section
+    00000000000000000000000 */
+}
+@media (min-width: 480px){
+    #fromSection{
+        max-width: 400px;
+    }
+}
+@media (max-width: 991.98px){
+
+    /* ==========================================
+       HEADER & NAVIGATION
+    ========================================== */
+
+    /* ==========================================
+       HEADER & NAVIGATION
+    ========================================== */
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+    /*_______________________
+        project section
+    _________________________*/
+
+
+    /*_______________________
+        project section
+    _________________________*/
+
+}
+
+
+@media (max-width: 576px) {
+    /* ==========================================
+       5. intro SECTION
+    ========================================== */
+
+    header .intro h1{
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.2;
+    }
+    .intro .subTitel {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .intro p{
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    header .intro .text{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .intro .subTitel{line-height: 1.2;}
+
+    /* ==========================================
+       5. intro SECTION
+    ========================================== */
+
+
+    /* ==========================================
+       5. About SECTION
+    ========================================== */
+
+    ul.aboutList li::before{
+        font-size: 2rem;
+    }
+    ul.list li {
+        position: relative;
+        padding: 0.5rem 0 1rem 3.3rem;
+    }
+
+    /* ==========================================
+       5. Aboout SECTION
+    ========================================== */
+
+
+    /* ==========================================
+       project SECTION
+    ========================================== */
+    .projectSection .text{
+        padding: 0.75rem;
+    }
+    .projectSection .text p.titel{
+        font-size: 1rem;
+        margin-bottom: 0.15rem;
+    }
+    .projectSection .text p{
+        margin-bottom: 0.55rem;
+        font-size: 0.85rem;
+        line-height: 1.3;
+
+    }
+    .projectSection .text a{
+        color: var(--color-white);
+        font-size: 0.85rem;
+    }
+
+    /* ==========================================
+       project SECTION
+    ========================================== */
+
+}
+@media (max-width: 414px) {
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+}
